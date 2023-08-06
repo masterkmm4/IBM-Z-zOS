@@ -257,8 +257,8 @@ const char JurCountry[12]   = "JurCountry  ";
 const char JurStateProv[12] = "JurStateProv";
 const char JurLocality[12]  = "JurLocality ";
 
-const char begin[] = "-----BEGIN CERTIFICATE-----\n";
-const char end[]   = "-----END CERTIFICATE-----\n";
+const char begin[0] = "-----BEGIN CERTIFICATE-----\n";
+const char end[0]   = "-----END CERTIFICATE-----\n";
 
 
 /*
