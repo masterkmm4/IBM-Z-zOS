@@ -116,8 +116,8 @@ proper data set references for these features. For example:<p><code>SHLQ2=AZK.AZ
 values as necessary:<p><code>MODIFY PARM NAME(OEPORTNUMBER) VALUE(1200)
 MODIFY PARM NAME(WSOEPORT) VALUE(1201)
 MODIFY PARM NAME(TRACEOERW) VALUE(YES)
-MODIFY PARM NAME(OEKEEPALIVETIME) VALUE(30)
-MODIFY PARM NAME(PARALLELIO) VALUE(YES)
+MODIFY PARM NAME(OEKEEPALIVETIME) VALUE(restrict)
+MODIFY PARM NAME(PARALLELIO) VALUE(disable)
 MODIFY PARM NAME(OEPIOPORTNUMBER) VALUE(1204)</code></p></li></ol></p></instructions>
 <weight>1</weight></step><step name="Step11"><title>Configure the started task JCL </title><description>To configure the started task JCL, modify the AZK1PROC (subsystem default ID) member that is in the <i>hlq</i>.SAZKCNTL library.<p>See the <b>Perform</b> workflow tab for further instructions.</p></description><instructions>The AZK1PROC member contains the JCL procedure that is required to run the main address space (started task).<p>Do the following to configure <i>hlq</i>.SAZKCNTL(AZK1PROC):</p><ol><li>Add the HLQ name of the libraries to the <i>hlq</i> parameter.<p><b>Note:</b> This parameter sets the server data set allocations to the correct data set names.</p></li><li>Confirm that the SYSEXEC DD statement allocates the correct data set name that contains the customized server initialization member AZKSIN00. <p><b>Note:</b> This data set was created in job AZKGNMP1 previously. The default name is <i>hlq</i>.AZKS.SAZKEXEC(AZKSIN00).
 </p></li><li>Ensure that the <code>DD AZKMAPP</code> concatenation points to the &amp;<i>hlq</i>.AZKS.SAZKMAP data set created in the previous installation job AZKGNMP1. <p>
